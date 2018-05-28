@@ -1,0 +1,101 @@
+.main__cinemas
+  padding: 2.25vw 0
+
+.main__cinemas__list
+.main__cinemas__list__header
+
+.main__cinemas__list__header__title
+  margin-bottom: 1.25vw
+  padding: 0 50px
+  font-size: 1.4vw
+  line-height: 100%
+  color: #fff
+
+
+.main__cinemas__list__header__title__text
+  font-weight: 400
+  opacity: 0.7
+
+
+.main__cinemas__list__header__show-more
+  float: right
+  font-size: 1.1vw
+  letter-spacing: 0
+
+
+.main__cinemas__list__header__show-more__text
+  opacity: 0.5
+  &:hover
+    opacity: 0.8
+
+.main__cinemas__list__header__show-more__icon
+  opacity: 0.5
+  vertical-align: middle
+
+.main__cinemas__list__body
+  +cinema-list('desktop-large-size')
+  +cinema-list('desktop-medium-size')
+  +cinema-list('desktop-small-size')
+  +cinema-list('tablet-size')
+  +cinema-list('mobile-size')
+
+.main__cinemas__list__body__slider
+  padding: 0 50px
+  position: relative
+.main__cinemas__list__body__slider__contents
+  white-space: nowrap
+  overflow-x: visible
+
+.main__cinemas__list__body__slider__contents__item
+  display: inline-block
+  transition: trnaform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s
+  +screen-size('desktop-large-size')
+  +screen-size('desktop-medium-size')
+  +screen-size('desktop-small-size')
+  +screen-size('tablet-size')
+  +screen-size('mobile-size')
+
+
+.contents__item__content
+  position: relative
+  cursor: pointer
+  transition: transform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s
+
+
+.contents__item__content__still-cut
+  width: 100%
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center center
+  background-color: #22a
+  border: 0.1vw solid #191
+  padding: 28.125% 0
+
+
+.contents__item__content__overlay
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  top: 0
+  white-space: nowrap
+  background: linear-gradient(to top, rgba(18,18,24,0.7) 10%, transparent 80%)
+
+
+.contents__item__content__title
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  color: #fff
+  opacity: 0.9
+  white-space: pre-line
+  word-wrap: break-word
+  font-weight: 300
+  +content-title-size('desktop-large-size')
+  +content-title-size('desktop-medium-size')
+  +content-title-size('desktop-small-size')
+  +content-title-size('tablet-size')
+  +content-title-size('mobile-size')
+
+
