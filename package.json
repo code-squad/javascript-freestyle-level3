@@ -1,0 +1,22 @@
+{
+  "name": "javascript-watcha",
+  "version": "1.0.0",
+  "description": "Project for studying by cloning watcha play",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likedemian/javascript-food.git"
+  },
+  "author": "Lee Dongwoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/likedemian/javascript-food/issues"
+  },
+  "homepage": "https://github.com/likedemian/javascript-food#readme",
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1"
+  }
+}

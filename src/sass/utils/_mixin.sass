@@ -1,0 +1,74 @@
+$desktop-large-size: "(min-width: 1920px)"
+$desktop-medium-size: "(min-width: 1024px) and(max-width: 1919px)"
+$desktop-small-size: "(min-width: 768px) and (max-width: 1023px)"
+$tablet-size: "(min-width: 425px) and (max-width: 767px)"
+$mobile-size: "(max-witdh: 425px)"
+
+
+
+=screen-size($size)
+  @if $size == desktop-large-size
+    @media screen and #{$desktop-large-size}
+      width: 16.6666666667%
+  @else if $size == desktop-medium-size
+    @media screen and #{$desktop-medium-size}
+      width: 20%
+  @else if $size == desktop-small-size
+    @media screen and #{$desktop-small-size}
+      width: 33.3333333333%
+  @else if $size == tablet-size
+    @media screen and #{$tablet-size}
+      width: 50%
+  @else if $size == mobile-size
+    @media screen and #{$mobile-size}
+      width: 100%
+
+
+=content-title-size($size)
+  @if $size == desktop-large-size
+    @media screen and #{$desktop-large-size}
+      font-size: 0.9vw
+      padding: 16% 0.8vw 0.8vw
+  @else if $size == desktop-medium-size
+    @media screen and #{$desktop-medium-size}
+      font-size: 1.2vw
+      padding: 16% 1vw 1vw
+  @else if $size == desktop-small-size
+    @media screen and #{$desktop-small-size}
+      font-size: 1.75vw
+      padding: 16% 1.5vw 1.5vw
+  @else if $size == tablet-size
+    @media screen and #{$tablet-size}
+      font-size: 2.5vw
+      padding: 16% 2vw 1.75vw
+  @else if $size == mobile-size
+    @media screen and #{$mobile-size}
+      font-size: 3.3vw
+      padding: 16% 2.5vw 2vw
+
+
+
+
+=cinema-list($size)
+  @if $size == desktop-large-size
+    @media screen and #{$desktop-large-size}
+      margin-bottom: 3.5vw
+  @else if $size == desktop-medium-size
+    @media screen  and #{$desktop-medium-size}
+      margin-bottom: 4.25vw
+  @else if $size == desktop-small-size
+    @media screen and #{$desktop-small-size}
+      margin-bottom: 5vw
+  @else if $size == tablet-size
+    @media screen and #{$tablet-size}
+      margin-bottom: 8vw
+
+
+
+  
+=clearfix 
+  &:before, &:after 
+    content: ""
+    display: table
+  &:after
+    clear: both
