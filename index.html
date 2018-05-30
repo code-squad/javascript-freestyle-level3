@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
   <link rel="stylesheet" href="dist/css/app.css">
+  <script defer src="src/js/data.js"></script>
   <script defer src="src/js/app.js"></script>
 </head>
 
@@ -23,6 +24,22 @@
         </li>
         <li class="header__gnb__left-nav__categories">
           <a href="#" class="header__gnb__left-nav__categories-link">카테고리</a>
+          <div class="header__gnb__left-nav__categories-list">
+            <div class="header__gnb__left-nav__categories-list__filter">
+              <template id="header__gnb__left-nav__categories-list__template">
+                <button class="header__gnb__left-nav__categories-list__filter__item">
+                  <span class="header__gnb__left-nav__categories-list__filter__text">{{key}}</span>
+                </button>
+              </template>
+              </div>
+              <ul class="header__gnb__left-nav__categories-list__filtered-list">
+                <template id="header__gnb__left-nav__categories-list__filter-list__template">
+                  <li class="header__gnb__left-nav__categories-list__filtered__item">
+                    <a class="filtered__item__link" href="#">{{name}}</a>
+                  </li>
+                </template>
+              </ul>
+            </div>
         </li>
         <li class="header__gnb__left-nav__rating">
           <a href="" class="header__gnb__left-nav__rating-link">평가하기</a>
