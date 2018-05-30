@@ -1,8 +1,8 @@
 .main__cinemas
   padding: 2.25vw 0
 
-.main__cinemas__list
-.main__cinemas__list__header
+// .main__cinemas__list
+// .main__cinemas__list__header
 
 .main__cinemas__list__header__title
   margin-bottom: 1.25vw
@@ -32,28 +32,29 @@
   opacity: 0.5
   vertical-align: middle
 
+
 .main__cinemas__list__body
-  +cinema-list('desktop-large-size')
-  +cinema-list('desktop-medium-size')
-  +cinema-list('desktop-small-size')
-  +cinema-list('tablet-size')
-  +cinema-list('mobile-size')
+  @for $i from 0 to $screen-size-count 
+    +screen-mb(#{$i})
+
 
 .main__cinemas__list__body__slider
   padding: 0 50px
   position: relative
+
+
 .main__cinemas__list__body__slider__contents
   white-space: nowrap
   overflow-x: visible
 
+
 .main__cinemas__list__body__slider__contents__item
   display: inline-block
-  transition: trnaform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s
-  +screen-size('desktop-large-size')
-  +screen-size('desktop-medium-size')
-  +screen-size('desktop-small-size')
-  +screen-size('tablet-size')
-  +screen-size('mobile-size')
+  transition: transform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s
+  @for $i from 0 to $screen-size-count 
+    +screen-width(#{$i})
+
+
 
 
 .contents__item__content
@@ -92,10 +93,5 @@
   white-space: pre-line
   word-wrap: break-word
   font-weight: 300
-  +content-title-size('desktop-large-size')
-  +content-title-size('desktop-medium-size')
-  +content-title-size('desktop-small-size')
-  +content-title-size('tablet-size')
-  +content-title-size('mobile-size')
-
-
+  @for $i from 0 to $screen-size-count 
+    +screen-fz-pd(#{$i})

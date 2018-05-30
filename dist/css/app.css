@@ -57,6 +57,21 @@ a {
   color: #fff;
   text-decoration: none; }
 
+/* ******************************************************** */
+/*                      Screen size                         */
+/* ******************************************************** */
+/* ******************************************************** */
+/*                         width                            */
+/* ******************************************************** */
+/* ******************************************************** */
+/*                       Font-Size                          */
+/* ******************************************************** */
+/* ******************************************************** */
+/*                        Padding                           */
+/* ******************************************************** */
+/* ******************************************************** */
+/*                     Margin-Bottom                        */
+/* ******************************************************** */
 .header__gnb {
   box-sizing: border-box;
   position: fixed;
@@ -73,6 +88,68 @@ a {
   width: 204px;
   height: 80px;
   background: url(https://d1rb9b8eeq1zxg.cloudfront.net/assets/horizontal-logo-5ca50cf74556235b077acebcfba22d894ea3f9ca36992e5ac1094f712956c1dd.svg) 0 26px no-repeat; }
+
+/* NAVIGATION CATEGORIES */
+.header__gnb__left-nav__categories {
+  position: relative;
+  float: left;
+  min-width: 80px;
+  text-align: center;
+  font-size: 1rem;
+  margin-right: 4px; }
+
+.header__gnb__left-nav__categories-link {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.5; }
+  .header__gnb__left-nav__categories-link:hover {
+    opacity: 0.8; }
+
+.header__gnb__left-nav__categories-list {
+  position: absolute;
+  width: 460px;
+  left: 0;
+  top: 80px;
+  line-height: 1.5;
+  z-index: 3;
+  background: #121212; }
+
+.header__gnb__left-nav__categories-list__filter {
+  float: left;
+  width: 70px; }
+
+.header__gnb__left-nav__categories-list__filter__item {
+  border: none;
+  background: 0;
+  height: 40px;
+  line-height: 40px; }
+
+.header__gnb__left-nav__categories-list__filter__text {
+  opacity: 0.5;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  padding-bottom: 2px; }
+  .header__gnb__left-nav__categories-list__filter__text:hover {
+    opacity: 0.8;
+    border-bottom: 1px solid #fff; }
+
+.header__gnb__left-nav__categories-list__filtered-list {
+  float: right;
+  width: 390px; }
+
+.header__gnb__left-nav__categories-list__filtered__item {
+  position: relative;
+  width: 130px;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 16px;
+  text-align: left; }
+  .header__gnb__left-nav__categories-list__filtered__item a {
+    opacity: 0.5;
+    letter-spacing: 0.75px; }
+    .header__gnb__left-nav__categories-list__filtered__item a:hover {
+      opacity: 0.8; }
 
 .header__gnb__left-nav {
   float: left;
@@ -93,21 +170,6 @@ a {
   color: #fff;
   opacity: 0.5; }
   .header__gnb__left-nav__home-link:hover {
-    opacity: 0.8; }
-
-/* NAVIGATION CATEGORIES */
-.header__gnb__left-nav__categories {
-  float: left;
-  min-width: 80px;
-  text-align: center;
-  font-size: 1rem;
-  margin-right: 4px; }
-
-.header__gnb__left-nav__categories-link {
-  text-decoration: none;
-  color: #fff;
-  opacity: 0.5; }
-  .header__gnb__left-nav__categories-link:hover {
     opacity: 0.8; }
 
 /* NAVIGATION RATING */
@@ -437,6 +499,69 @@ a {
     margin-bottom: 5vw; } }
 @media screen and (min-width: 425px) and (max-width: 767px) {
   .main__cinemas__list__body {
+    margin-bottom: 6.5vw; } }
+@media screen and (max-width: 424px) {
+  .main__cinemas__list__body {
+    margin-bottom: 8vw; } }
+@media screen and (min-width: 1920px) {
+  .main__cinemas__list__body {
+    margin-bottom: 3.5vw; } }
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  .main__cinemas__list__body {
+    margin-bottom: 4.25vw; } }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main__cinemas__list__body {
+    margin-bottom: 5vw; } }
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main__cinemas__list__body {
+    margin-bottom: 6.5vw; } }
+@media screen and (max-width: 424px) {
+  .main__cinemas__list__body {
+    margin-bottom: 8vw; } }
+@media screen and (min-width: 1920px) {
+  .main__cinemas__list__body {
+    margin-bottom: 3.5vw; } }
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  .main__cinemas__list__body {
+    margin-bottom: 4.25vw; } }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main__cinemas__list__body {
+    margin-bottom: 5vw; } }
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main__cinemas__list__body {
+    margin-bottom: 6.5vw; } }
+@media screen and (max-width: 424px) {
+  .main__cinemas__list__body {
+    margin-bottom: 8vw; } }
+@media screen and (min-width: 1920px) {
+  .main__cinemas__list__body {
+    margin-bottom: 3.5vw; } }
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  .main__cinemas__list__body {
+    margin-bottom: 4.25vw; } }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main__cinemas__list__body {
+    margin-bottom: 5vw; } }
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main__cinemas__list__body {
+    margin-bottom: 6.5vw; } }
+@media screen and (max-width: 424px) {
+  .main__cinemas__list__body {
+    margin-bottom: 8vw; } }
+@media screen and (min-width: 1920px) {
+  .main__cinemas__list__body {
+    margin-bottom: 3.5vw; } }
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  .main__cinemas__list__body {
+    margin-bottom: 4.25vw; } }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main__cinemas__list__body {
+    margin-bottom: 5vw; } }
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main__cinemas__list__body {
+    margin-bottom: 6.5vw; } }
+@media screen and (max-width: 424px) {
+  .main__cinemas__list__body {
     margin-bottom: 8vw; } }
 
 .main__cinemas__list__body__slider {
@@ -449,7 +574,7 @@ a {
 
 .main__cinemas__list__body__slider__contents__item {
   display: inline-block;
-  transition: trnaform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s; }
+  transition: transform 0.4s cubic-bezier(0.5, 0, 0.1, 1) 0s; }
   @media screen and (min-width: 1920px) {
     .main__cinemas__list__body__slider__contents__item {
       width: 16.6666666667%; } }
@@ -458,11 +583,71 @@ a {
       width: 20%; } }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .main__cinemas__list__body__slider__contents__item {
-      width: 33.3333333333%; } }
+      width: 33.333333333%; } }
   @media screen and (min-width: 425px) and (max-width: 767px) {
     .main__cinemas__list__body__slider__contents__item {
       width: 50%; } }
-  @media screen and (max-witdh: 425px) {
+  @media screen and (max-width: 424px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 100%; } }
+  @media screen and (min-width: 1920px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 16.6666666667%; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 20%; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 33.333333333%; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 50%; } }
+  @media screen and (max-width: 424px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 100%; } }
+  @media screen and (min-width: 1920px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 16.6666666667%; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 20%; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 33.333333333%; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 50%; } }
+  @media screen and (max-width: 424px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 100%; } }
+  @media screen and (min-width: 1920px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 16.6666666667%; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 20%; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 33.333333333%; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 50%; } }
+  @media screen and (max-width: 424px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 100%; } }
+  @media screen and (min-width: 1920px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 16.6666666667%; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 20%; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 33.333333333%; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .main__cinemas__list__body__slider__contents__item {
+      width: 50%; } }
+  @media screen and (max-width: 424px) {
     .main__cinemas__list__body__slider__contents__item {
       width: 100%; } }
 
@@ -501,7 +686,7 @@ a {
   font-weight: 300; }
   @media screen and (min-width: 1920px) {
     .contents__item__content__title {
-      font-size: 0.9vw;
+      font-size: 0.95vw;
       padding: 16% 0.8vw 0.8vw; } }
   @media screen and (min-width: 1024px) and (max-width: 1919px) {
     .contents__item__content__title {
@@ -515,7 +700,87 @@ a {
     .contents__item__content__title {
       font-size: 2.5vw;
       padding: 16% 2vw 1.75vw; } }
-  @media screen and (max-witdh: 425px) {
+  @media screen and (max-width: 424px) {
+    .contents__item__content__title {
+      font-size: 3.3vw;
+      padding: 16% 2.5vw 2vw; } }
+  @media screen and (min-width: 1920px) {
+    .contents__item__content__title {
+      font-size: 0.95vw;
+      padding: 16% 0.8vw 0.8vw; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .contents__item__content__title {
+      font-size: 1.2vw;
+      padding: 16% 1vw 1vw; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contents__item__content__title {
+      font-size: 1.75vw;
+      padding: 16% 1.5vw 1.5vw; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .contents__item__content__title {
+      font-size: 2.5vw;
+      padding: 16% 2vw 1.75vw; } }
+  @media screen and (max-width: 424px) {
+    .contents__item__content__title {
+      font-size: 3.3vw;
+      padding: 16% 2.5vw 2vw; } }
+  @media screen and (min-width: 1920px) {
+    .contents__item__content__title {
+      font-size: 0.95vw;
+      padding: 16% 0.8vw 0.8vw; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .contents__item__content__title {
+      font-size: 1.2vw;
+      padding: 16% 1vw 1vw; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contents__item__content__title {
+      font-size: 1.75vw;
+      padding: 16% 1.5vw 1.5vw; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .contents__item__content__title {
+      font-size: 2.5vw;
+      padding: 16% 2vw 1.75vw; } }
+  @media screen and (max-width: 424px) {
+    .contents__item__content__title {
+      font-size: 3.3vw;
+      padding: 16% 2.5vw 2vw; } }
+  @media screen and (min-width: 1920px) {
+    .contents__item__content__title {
+      font-size: 0.95vw;
+      padding: 16% 0.8vw 0.8vw; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .contents__item__content__title {
+      font-size: 1.2vw;
+      padding: 16% 1vw 1vw; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contents__item__content__title {
+      font-size: 1.75vw;
+      padding: 16% 1.5vw 1.5vw; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .contents__item__content__title {
+      font-size: 2.5vw;
+      padding: 16% 2vw 1.75vw; } }
+  @media screen and (max-width: 424px) {
+    .contents__item__content__title {
+      font-size: 3.3vw;
+      padding: 16% 2.5vw 2vw; } }
+  @media screen and (min-width: 1920px) {
+    .contents__item__content__title {
+      font-size: 0.95vw;
+      padding: 16% 0.8vw 0.8vw; } }
+  @media screen and (min-width: 1024px) and (max-width: 1919px) {
+    .contents__item__content__title {
+      font-size: 1.2vw;
+      padding: 16% 1vw 1vw; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contents__item__content__title {
+      font-size: 1.75vw;
+      padding: 16% 1.5vw 1.5vw; } }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .contents__item__content__title {
+      font-size: 2.5vw;
+      padding: 16% 2vw 1.75vw; } }
+  @media screen and (max-width: 424px) {
     .contents__item__content__title {
       font-size: 3.3vw;
       padding: 16% 2.5vw 2vw; } }
