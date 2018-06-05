@@ -77,3 +77,35 @@ switchFilter();
 
 
 
+const getMovieData = () => {
+  let state = 'https://api.themoviedb.org/3/discover/movie';
+  let api = '?api_key=64391ca210dbae0d44b0a622177ef8d3';
+  let korean = '&language=ko'
+  let movieDB = state + api + korean;
+  let oReq = new XMLHttpRequest();
+  oReq.addEventListener('load', function () {
+    let movieList = JSON.parse(this.responseText).results;
+    let movieSlideList = JSON.parse(this.responseText).results.sort(() => Math.random() - 0.5).slice(0, 3);
+    renderContents(movieList, movieSlideList);
+    swipeMainContents();
+
+  });
+  oReq.open("GET", movieDB)
+  oReq.send();
+}
+
+
+getMovieData();
+
+
+
+
+
+const renderContents = (movieData, slideData) => {
+  const movieContents = document.querySelector('.main__cinemas__list__body__slider__contents');
+  const sliderContent = document.querySelector('.main__slider__content');
+  movieContents.innerHTML += showItems(movieData, 'main__cinemas__list__body__slider__contents__template');
+  sliderContent.innerHTML += showItems(slideData, 'main__slider__content__template');
+}
+
+
