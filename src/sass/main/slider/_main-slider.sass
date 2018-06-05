@@ -4,12 +4,24 @@
   background: #191919
 
 
+
+
+
 .main__slider__content
   position: absolute
   top: 0
   bottom: 0
   left: 0
   right: 0
+
+
+  
+
+.main__slider__content__container
+  display: block
+  opacity: 0
+  
+
 
 
 .main__slider__content__image-container
@@ -23,6 +35,7 @@
   width: 100%
   border: 0
   z-index: 1
+  display: inline
 
 
 .main__slider__content__image-container__shadow-top
@@ -116,6 +129,12 @@
   margin-bottom: 2.2vw
   white-space: pre-line
   font-weight: 300
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: 5
+  -webkit-box-orient: vertical  
+  height: 200p
+
 
 
 .main__slider__content__wish
@@ -178,7 +197,7 @@
   position: absolute
   right: 28.5vw
   top: 18.25vw
-  z-index: 2.5
+  z-index: 3
 
 
 .main__slider__content__play__icon
@@ -196,7 +215,8 @@
   outline: none
   background: 0
   cursor: pointer
-  
+  z-index: 2
+
 
 .main__slider__nav__prev__arrow-icon
   color: #fff
@@ -216,6 +236,7 @@
   outline: none
   background: 0
   cursor: pointer
+  z-index: 2
 
 
 .main__slider__nav__next__arrow-icon
