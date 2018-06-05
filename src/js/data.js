@@ -1,9 +1,11 @@
-const mainCategories = [{ "key": "장르" },{ "key": "국가" },{ "key": "특징" },]
+const mainCategories = [
+  { "key": "장르" },
+  { "key": "국가" },
+  { "key": "특징" }
+]
 
-
-
-const categories = {
-  genres: [
+const categoriesLists = [
+  [
     {"name": "새로 올라온 작품"},
     {"name": "TV드라마"},
     {"name": "TV다큐멘터리"},
@@ -33,7 +35,7 @@ const categories = {
     {"name": "로맨틱코미디"},
     {"name": "시트콤"},
   ],
-  national: [
+  [
     {"name": "프랑스"},
     {"name": "독일"},
     {"name": "이탈리아"},
@@ -48,7 +50,7 @@ const categories = {
     {"name": "스페인"},
     {"name": "인도"}
   ],
-  characteristic: [
+  [
     {"name": "역사"},
     {"name": "관계"},
     {"name": "교양"},
@@ -61,7 +63,24 @@ const categories = {
     {"name": "직장"},
     {"name": "추리"},
     {"name": "정치"},
+    {"name": "90년이전"},
     {"name": "흑백연출"},
-    {"name": "90년대"}
+    {"name": "90년대"},
+    {"name": "인공지능"},
+    {"name": "심리"},
+    {"name": "우울한"},
+    {"name": "학생"},
+    {"name": "성장"},
+    {"name": "철학적인"},
+    {"name": "퀴어"},
+    {"name": "영화"},
+    {"name": "종교"},
+    {"name": "여행"},
+    {"name": "2000년대"},
+    {"name": "미술"},
+    {"name": "사랑"},
+    {"name": "2010년대"},
+    {"name": "경제"},
+    {"name": "인물"}
   ]
-}
+]
