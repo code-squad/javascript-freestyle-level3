@@ -109,3 +109,56 @@ const renderContents = (movieData, slideData) => {
 }
 
 
+
+
+
+
+const swipeMainContents = () => {
+  let count = 0;
+  const mainSlides = document.querySelectorAll(".main__slider__content__container");
+  const prev = document.querySelector('.main__slider__nav__prev__arrow-icon');
+  const next = document.querySelector('.main__slider__nav__next__arrow-icon');
+  mainSlides[0].style.opacity = '1';
+
+  const dots = document.querySelector('.main__slider__nav__dots');
+  const dotBtn = dots.querySelectorAll('.main__slider__nav__dots__item')
+  dotBtn[0].style.background = '#fff';
+
+
+  prev.addEventListener('click', () => {
+    if (count < mainSlides.length && count > 0) {
+      count--;
+      mainSlides[count + 1].style.opacity = '0';
+      mainSlides[count].style.opacity = '1';
+      dotBtn[count + 1].style.background = 'none'
+      dotBtn[count].style.background = '#fff'
+    } else if (count === 0) {
+      mainSlides[count].style.opacity = '0';
+      mainSlides[mainSlides.length - 1].style.opacity = '1';
+      count = mainSlides.length;
+      console.log(mainSlides);
+      count--;
+      dotBtn[count - 2].style.background = 'none'
+      dotBtn[mainSlides.length - 1].style.background = '#fff'
+    }
+  })
+
+  next.addEventListener('click', () => {
+    if (count < mainSlides.length - 1) {
+
+      count++;
+      mainSlides[count - 1].style.opacity = '0';
+      mainSlides[count].style.opacity = '1';
+      dotBtn[count - 1].style.background = '0';
+      dotBtn[count].style.background = '#fff';
+
+    } else if (count >= mainSlides.length - 1) {
+      count = 0;
+      mainSlides[count + 2].style.opacity = '0';
+      mainSlides[count].style.opacity = '1';
+      dotBtn[count + 2].style.background = '0';
+      dotBtn[count].style.background = '#fff';
+
+    }
+  })
+}
