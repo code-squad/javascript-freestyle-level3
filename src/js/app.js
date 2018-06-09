@@ -1,9 +1,7 @@
 const template = (templateid, data) => {
   return document.getElementById(templateid).innerHTML
-    .replace(/{{(\w*)}}/g, (match, key) => data.hasOwnProperty(key) ? data[key] : "");
+    .replace(/{{(\w*)}}/g, (match, key) => data.hasOwnProperty(key) ? data[key] : '');
 }
-
-
 
 
 const showItems = (val, templateId) => {
@@ -11,55 +9,32 @@ const showItems = (val, templateId) => {
 }
 
 
-
+const renderTemplate = (selector, data, template) => {
+  return selector.innerHTML += showItems(data, template);
+}
 
 
 const categoriesTemplate = (function () {
-  const _makeFilters = () => {
-    let filters = document.querySelector('.header__gnb__left-nav__categories-list__filter');
-    return filters.innerHTML += showItems(mainCategories, 'header__gnb__left-nav__categories-list__template');
+  let oReq = new XMLHttpRequest();
+  
+  oReq.addEventListener('load', function () {
+    let jsonData = JSON.parse(this.responseText);
+    getFilter(jsonData.main);
+    switchFilter(jsonData.main);
+  });
+
+
+  const getFilter = (data) => {
+    const filters = document.querySelector('.header__gnb__left-nav__categories-list__filter');
+    const filterLists = document.querySelector('.header__gnb__left-nav__categories-list__filtered-list');
+    return renderTemplate(filters, data, 'header__gnb__left-nav__categories-list__template') && renderTemplate(filterLists, data[0].detail, 'header__gnb__left-nav__categories-list__filter-list__template');
   }
 
-  const _makeFilterLists = () => {
-    let filterLists = document.querySelector('.header__gnb__left-nav__categories-list__filtered-list');
-    return filterLists.innerHTML += showItems(categoriesLists[0], 'header__gnb__left-nav__categories-list__filter-list__template');
-  }
-  return {
-    getFilter() {
-      return _makeFilters() && _makeFilterLists();
-    }
-  }
-})();
-categoriesTemplate.getFilter();
 
-
-
-
-
-
-const categoriesLink = document.querySelector('.header__gnb__left-nav__categories-link');
-const categoriesBox = document.querySelector('.header__gnb__left-nav__categories-list');
-const categoriesNav = document.querySelector('.header__gnb__left-nav__categories');
-
-categoriesLink.addEventListener('pointerover', e => {
-  categoriesBox.classList.add('active')
-})
-
-categoriesBox.addEventListener('pointerleave', e => {
-  categoriesBox.classList.remove('active')
-})
-
-categoriesNav.addEventListener('pointerleave', e => {
-  categoriesBox.classList.remove('active')
-})
-
-
-
-const switchFilter = () => {
-  const categoriesFilterBtns = document.querySelectorAll('.header__gnb__left-nav__categories-list__filter__item');
-  categoriesFilterBtns.forEach((elem, idx) => {
-    elem.addEventListener('click', e => {
-      let filterLists = document.querySelector('.header__gnb__left-nav__categories-list__filtered-list');
+  const switchFilter = (data) => {
+    const categoriesFilterBtns = document.querySelector('.header__gnb__left-nav__categories-list__filter');
+    categoriesFilterBtns.addEventListener('click', e => {
+      const filterLists = document.querySelector('.header__gnb__left-nav__categories-list__filtered-list');
       filterLists.innerHTML =
         `
         <template id="header__gnb__left-nav__categories-list__filter-list__template">
@@ -68,12 +43,40 @@ const switchFilter = () => {
           </li>
         </template>
         `
-      return filterLists.innerHTML += showItems(categoriesLists[idx], 'header__gnb__left-nav__categories-list__filter-list__template');
+      data.forEach((elem, idx) => {
+        if (e.target.innerText === elem.key) {
+          return renderTemplate(filterLists, data[idx].detail, 'header__gnb__left-nav__categories-list__filter-list__template')
+        }
+      })
     })
+  }
+
+
+  oReq.open("GET", "src/js/data.json")
+  oReq.send();
+})();
+
+
+
+const $on = (selector, type, callback) => {
+  selector.addEventListener(type, callback)
+}
+
+
+const bindPointer = () => {
+  const categoriesNav = document.querySelector('.header__gnb__left-nav__categories');
+  const categoriesLink = document.querySelector('.header__gnb__left-nav__categories-link');
+  const categoriesBox = document.querySelector('.header__gnb__left-nav__categories-list');
+
+  $on(categoriesNav, 'pointerover', e => {
+    e.target === categoriesLink && categoriesBox.classList.add('active')
+  })
+
+  $on(categoriesNav, 'pointerleave', e => {
+    e.target === categoriesBox || categoriesNav && categoriesBox.classList.remove('active')
   })
 }
 
-switchFilter();
 
 
 
@@ -84,8 +87,9 @@ const getMovieData = () => {
   let movieDB = state + api + korean;
   let oReq = new XMLHttpRequest();
   oReq.addEventListener('load', function () {
-    let movieList = JSON.parse(this.responseText).results;
-    let movieSlideList = JSON.parse(this.responseText).results.sort(() => Math.random() - 0.5).slice(0, 3);
+    let JSONmovieData = JSON.parse(this.responseText).results
+    let movieList = JSONmovieData;
+    let movieSlideList = JSONmovieData.slice().sort(() => Math.random() - 0.5).slice(0, 3);
     renderContents(movieList, movieSlideList);
     swipeMainContents();
 
@@ -95,21 +99,21 @@ const getMovieData = () => {
 }
 
 
-getMovieData();
-
-
-
-
 
 const renderContents = (movieData, slideData) => {
   const movieContents = document.querySelector('.main__cinemas__list__body__slider__contents');
   const sliderContent = document.querySelector('.main__slider__content');
-  movieContents.innerHTML += showItems(movieData, 'main__cinemas__list__body__slider__contents__template');
-  sliderContent.innerHTML += showItems(slideData, 'main__slider__content__template');
+  renderTemplate(movieContents, movieData, 'main__cinemas__list__body__slider__contents__template');
+  renderTemplate(sliderContent, slideData, 'main__slider__content__template');
 }
 
+bindPointer();
+getMovieData();
 
 
+/* ************************************************************************************************************** */
+/*                                               아래 코드는 진행중인 영역입니다.                                         */
+/* ************************************************************************************************************** */
 
 
 
@@ -119,11 +123,9 @@ const swipeMainContents = () => {
   const prev = document.querySelector('.main__slider__nav__prev__arrow-icon');
   const next = document.querySelector('.main__slider__nav__next__arrow-icon');
   mainSlides[0].style.opacity = '1';
-
   const dots = document.querySelector('.main__slider__nav__dots');
   const dotBtn = dots.querySelectorAll('.main__slider__nav__dots__item')
   dotBtn[0].style.background = '#fff';
-
 
   prev.addEventListener('click', () => {
     if (count < mainSlides.length && count > 0) {
@@ -134,18 +136,15 @@ const swipeMainContents = () => {
       dotBtn[count].style.background = '#fff'
     } else if (count === 0) {
       mainSlides[count].style.opacity = '0';
-      mainSlides[mainSlides.length - 1].style.opacity = '1';
+      mainSlides[count + 2].style.opacity = '1';
       count = mainSlides.length;
-      console.log(mainSlides);
       count--;
-      dotBtn[count - 2].style.background = 'none'
-      dotBtn[mainSlides.length - 1].style.background = '#fff'
+      dotBtn[count - 2].style.background = 'none';
+      dotBtn[count].style.background = '#fff'
     }
   })
-
   next.addEventListener('click', () => {
     if (count < mainSlides.length - 1) {
-
       count++;
       mainSlides[count - 1].style.opacity = '0';
       mainSlides[count].style.opacity = '1';
@@ -158,7 +157,20 @@ const swipeMainContents = () => {
       mainSlides[count].style.opacity = '1';
       dotBtn[count + 2].style.background = '0';
       dotBtn[count].style.background = '#fff';
-
     }
   })
 }
+
+const bindSlideBtn = (handler) => {
+  return document.addEventListener('click', handler);
+}
+
+
+const slideBtn = (event) => {
+  if (event.target.className === 'main__slider__nav__dots__item') {
+    console.log("Yeah~!");
+  }
+}
+
+
+bindSlideBtn(slideBtn.bind(this));
