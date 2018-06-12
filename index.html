@@ -8,9 +8,8 @@
   <title>첫달 무료 영화 드라마 무제한 감상 - 왓챠플레이</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
   <link rel="stylesheet" href="dist/css/app.css">
-  <script defer src="src/js/app.js"></script>
+  
 </head>
 
 <body>
@@ -18,44 +17,44 @@
     <nav class="header__gnb">
       <a class="header__gnb__logo" href="#"></a>
       <ul class="header__gnb__left-nav">
-        <li class="header__gnb__left-nav__home">
-          <a href="#" class="header__gnb__left-nav__home-link">홈</a>
+        <li class="left-nav__home">
+          <a href="#" class="left-nav__home-link">홈</a>
         </li>
-        <li class="header__gnb__left-nav__categories">
-          <a href="#" class="header__gnb__left-nav__categories-link">카테고리</a>
-          <div class="header__gnb__left-nav__categories-list">
-            <div class="header__gnb__left-nav__categories-list__filter">
-              <template id="header__gnb__left-nav__categories-list__template">
-                <button class="header__gnb__left-nav__categories-list__filter__item">
-                  <span class="header__gnb__left-nav__categories-list__filter__text">{{key}}</span>
+        <li class="left-nav__categories">
+          <a href="#" class="left-nav__categories-link">카테고리</a>
+          <div class="left-nav__categories-list">
+            <div class="left-nav__categories-list__filter">
+              <template id="left-nav__categories-list__template">
+                <button class="left-nav__categories-list__filter__item">
+                  <span class="left-nav__categories-list__filter__text">{{key}}</span>
                 </button>
               </template>
             </div>
-            <ul class="header__gnb__left-nav__categories-list__filtered-list">
-              <template id="header__gnb__left-nav__categories-list__filter-list__template">
-                <li class="header__gnb__left-nav__categories-list__filtered__item">
+            <ul class="left-nav__categories-list__filtered-list">
+              <template id="left-nav__categories-list__filter-list__template">
+                <li class="left-nav__categories-list__filtered__item">
                   <a class="filtered__item__link" href="#">{{name}}</a>
                 </li>
               </template>
             </ul>
           </div>
         </li>
-        <li class="header__gnb__left-nav__rating">
-          <a href="" class="header__gnb__left-nav__rating-link">평가하기</a>
+        <li class="left-nav__rating">
+          <a href="" class="left-nav__rating-link">평가하기</a>
         </li>
       </ul>
       <div class="header__gnb__right-nav">
-        <div class="header__gnb__right-nav__name">
-          <span class="header__gnb__right-nav__name__text">이동우</span>
-          <i class="header__gnb__right-nav__name__detail material-icons">arrow_drop_down</i>
+        <div class="right-nav__name">
+          <span class="right-nav__name__text">이동우</span>
+          <i class="right-nav__name__detail material-icons">arrow_drop_down</i>
         </div>
-        <div class="header__gnb__right-nav__wishes">
-          <a href="#" class="header__gnb__right-nav__wishes-link">보고싶어요</a>
+        <div class="right-nav__wishes">
+          <a href="#" class="right-nav__wishes-link">보고싶어요</a>
         </div>
-        <div class="header__gnb__right-nav__search">
-          <button class="header__gnb__right-nav__search-btn">
-            <i class="header__gnb__right-nav__search-btn__icon material-icons">search</i>
-            <span class="header__gnb__right-nav__search-btn__text">검색</span>
+        <div class="right-nav__search">
+          <button class="right-nav__search-btn">
+            <i class="right-nav__search-btn__icon material-icons">search</i>
+            <span class="right-nav__search-btn__text">검색</span>
           </button>
         </div>
       </div>
@@ -66,37 +65,37 @@
   <section class="main">
     <div class="main__slider">
       <div class="main__slider__content">
-        <template id="main__slider__content__template">
-          <div class="main__slider__content__container">
+        <template id="content__template">
+          <div class="content__container">
 
-            <div class="main__slider__content__image-container">
-              <img src="https://image.tmdb.org/t/p/w1280{{backdrop_path}}" alt="" class="main__slider__content__image-container__image">
-              <div class="main__slider__content__image-container__shadow-top"></div>
-              <div class="main__slider__content__image-container__shadow-left"></div>
-              <div class="main__slider__content__image-container__shadow-bottom"></div>
+            <div class="content__image-container">
+              <img src="https://image.tmdb.org/t/p/w1280{{backdrop_path}}" alt="" class="content__image-container__image">
+              <div class="content__image-container__shadow-top"></div>
+              <div class="content__image-container__shadow-left"></div>
+              <div class="content__image-container__shadow-bottom"></div>
             </div>
-            <div class="main__slider__content__info">
-              <h2 class="main__slider__content__info__title">{{title}}</h2>
+            <div class="content__info">
+              <h2 class="content__info__title">{{title}}</h2>
               <div class="meta__content">
                 <span class="meta__content__year">{{release_date}}</span>
                 <span class="meta__content__film-rate">15세</span>
                 <span class="meta__content__running-time">123분</span>
               </div>
-              <p class="main__slider__content__synopsis">
+              <p class="content__synopsis">
                 <span>{{overview}}</span>
               </p>
-              <button class="main__slider__content__wish">
-                <i class="main__slider__content__wish-icon material-icons">favorite_border</i>
-                <span class="main__slider__content__wish-text">&nbsp;보고싶어요</span>
+              <button class="content__wish">
+                <i class="content__wish-icon material-icons">favorite_border</i>
+                <span class="content__wish-text">&nbsp;보고싶어요</span>
               </button>
-              <button class="main__slider__content__meh">
-                <i class="main__slider__content__meh-icon material-icons">remove_circle_outline</i>
-                <span class="main__slider__content__meh-text">&nbsp;관심없어요</span>
+              <button class="content__meh">
+                <i class="content__meh-icon material-icons">remove_circle_outline</i>
+                <span class="content__meh-text">&nbsp;관심없어요</span>
               </button>
             </div>
 
-            <a href="#" class="main__slider__content__play">
-              <i class="main__slider__content__play__icon material-icons">play_circle_outline</i>
+            <a href="#" class="content__play">
+              <i class="content__play__icon material-icons">play_circle_outline</i>
             </a>
           </div>
         </template>
@@ -107,16 +106,16 @@
 
 
 
-      <button class="main__slider__nav__prev">
-        <i class="main__slider__nav__prev__arrow-icon material-icons">arrow_back_ios</i>
+      <button class="nav__prev">
+        <i class="nav__prev__arrow-icon material-icons">arrow_back_ios</i>
       </button>
-      <button class="main__slider__nav__next">
-        <i class="main__slider__nav__next__arrow-icon material-icons">arrow_forward_ios</i>
+      <button class="nav__next">
+        <i class="nav__next__arrow-icon material-icons">arrow_forward_ios</i>
       </button>
-      <div class="main__slider__nav__dots">
-        <button class="main__slider__nav__dots__item"></button>
-        <button class="main__slider__nav__dots__item"></button>
-        <button class="main__slider__nav__dots__item"></button>
+      <div class="nav__dots">
+        <button class="nav__dots__item"></button>
+        <button class="nav__dots__item"></button>
+        <button class="nav__dots__item"></button>
       </div>
     </div>
 
@@ -222,6 +221,7 @@
       </a>
     </div>
   </section>
+  <script src="src/js/app.js"></script>
 </body>
 
 </html>
