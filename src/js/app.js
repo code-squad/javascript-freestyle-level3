@@ -1,3 +1,7 @@
+const $on = (selector, type, callback) => {
+  selector.addEventListener(type, callback)
+}
+
 const template = (templateid, data) => {
   return document.getElementById(templateid).innerHTML
     .replace(/{{(\w*)}}/g, (match, key) => data.hasOwnProperty(key) ? data[key] : '');
@@ -14,59 +18,56 @@ const renderTemplate = (selector, data, template) => {
 }
 
 
+const init = () => {
+  collapseCategories();
+  getMovieData();
+}
+
+
 const categoriesTemplate = (function () {
   let oReq = new XMLHttpRequest();
-  
   oReq.addEventListener('load', function () {
     let jsonData = JSON.parse(this.responseText);
-    getFilter(jsonData.main);
-    switchFilter(jsonData.main);
+    getFilter(jsonData.categories);
+    switchFilter(jsonData.categories);
   });
 
 
   const getFilter = (data) => {
-    const filters = document.querySelector('.header__gnb__left-nav__categories-list__filter');
-    const filterLists = document.querySelector('.header__gnb__left-nav__categories-list__filtered-list');
-    return renderTemplate(filters, data, 'header__gnb__left-nav__categories-list__template') && renderTemplate(filterLists, data[0].detail, 'header__gnb__left-nav__categories-list__filter-list__template');
+    const filters = document.querySelector('.left-nav__categories-list__filter');
+    const filterLists = document.querySelector('.left-nav__categories-list__filtered-list');
+    return renderTemplate(filters, data, 'left-nav__categories-list__template') && renderTemplate(filterLists, data[0].detail, 'left-nav__categories-list__filter-list__template');
   }
 
-
   const switchFilter = (data) => {
-    const categoriesFilterBtns = document.querySelector('.header__gnb__left-nav__categories-list__filter');
+    const categoriesFilterBtns = document.querySelector('.left-nav__categories-list__filter');
     categoriesFilterBtns.addEventListener('click', e => {
-      const filterLists = document.querySelector('.header__gnb__left-nav__categories-list__filtered-list');
+      const filterLists = document.querySelector('.left-nav__categories-list__filtered-list');
       filterLists.innerHTML =
         `
-        <template id="header__gnb__left-nav__categories-list__filter-list__template">
-          <li class="header__gnb__left-nav__categories-list__filtered__item">
+        <template id="left-nav__categories-list__filter-list__template">
+          <li class="left-nav__categories-list__filtered__item">
             <a class="filtered__item__link" href="#">{{name}}</a>
           </li>
         </template>
         `
-      data.forEach((elem, idx) => {
-        if (e.target.innerText === elem.key) {
-          return renderTemplate(filterLists, data[idx].detail, 'header__gnb__left-nav__categories-list__filter-list__template')
+      data.forEach((el, i) => {
+        if (e.target.innerText === el.key) {
+          return renderTemplate(filterLists, data[i].detail, 'left-nav__categories-list__filter-list__template')
         }
       })
     })
   }
-
-
   oReq.open("GET", "src/js/data.json")
   oReq.send();
 })();
 
 
 
-const $on = (selector, type, callback) => {
-  selector.addEventListener(type, callback)
-}
-
-
-const bindPointer = () => {
-  const categoriesNav = document.querySelector('.header__gnb__left-nav__categories');
-  const categoriesLink = document.querySelector('.header__gnb__left-nav__categories-link');
-  const categoriesBox = document.querySelector('.header__gnb__left-nav__categories-list');
+const collapseCategories = () => {
+  const categoriesNav = document.querySelector('.left-nav__categories');
+  const categoriesLink = document.querySelector('.left-nav__categories-link');
+  const categoriesBox = document.querySelector('.left-nav__categories-list');
 
   $on(categoriesNav, 'pointerover', e => {
     e.target === categoriesLink && categoriesBox.classList.add('active')
@@ -79,20 +80,22 @@ const bindPointer = () => {
 
 
 
+const API = {
+  state: 'https://api.themoviedb.org/3/discover/movie',
+  api: '?api_key=64391ca210dbae0d44b0a622177ef8d3',
+  korean: '&language=ko',
+}
 
 const getMovieData = () => {
-  let state = 'https://api.themoviedb.org/3/discover/movie';
-  let api = '?api_key=64391ca210dbae0d44b0a622177ef8d3';
-  let korean = '&language=ko'
-  let movieDB = state + api + korean;
+  const { state, api, korean } = API;
+  const movieDB = state + api + korean;
   let oReq = new XMLHttpRequest();
   oReq.addEventListener('load', function () {
-    let JSONmovieData = JSON.parse(this.responseText).results
+    let JSONmovieData = JSON.parse(this.responseText).results;
     let movieList = JSONmovieData;
     let movieSlideList = JSONmovieData.slice().sort(() => Math.random() - 0.5).slice(0, 3);
     renderContents(movieList, movieSlideList);
     swipeMainContents();
-
   });
   oReq.open("GET", movieDB)
   oReq.send();
@@ -104,11 +107,16 @@ const renderContents = (movieData, slideData) => {
   const movieContents = document.querySelector('.main__cinemas__list__body__slider__contents');
   const sliderContent = document.querySelector('.main__slider__content');
   renderTemplate(movieContents, movieData, 'main__cinemas__list__body__slider__contents__template');
-  renderTemplate(sliderContent, slideData, 'main__slider__content__template');
+  renderTemplate(sliderContent, slideData, 'content__template');
 }
 
-bindPointer();
-getMovieData();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Loaded");
+  init();
+})
+
 
 
 /* ************************************************************************************************************** */
@@ -119,12 +127,12 @@ getMovieData();
 
 const swipeMainContents = () => {
   let count = 0;
-  const mainSlides = document.querySelectorAll(".main__slider__content__container");
-  const prev = document.querySelector('.main__slider__nav__prev__arrow-icon');
-  const next = document.querySelector('.main__slider__nav__next__arrow-icon');
+  const mainSlides = document.querySelectorAll(".content__container");
+  const prev = document.querySelector('.nav__prev__arrow-icon');
+  const next = document.querySelector('.nav__next__arrow-icon');
   mainSlides[0].style.opacity = '1';
-  const dots = document.querySelector('.main__slider__nav__dots');
-  const dotBtn = dots.querySelectorAll('.main__slider__nav__dots__item')
+  const dots = document.querySelector('.nav__dots');
+  const dotBtn = dots.querySelectorAll('.nav__dots__item')
   dotBtn[0].style.background = '#fff';
 
   prev.addEventListener('click', () => {
@@ -167,7 +175,7 @@ const bindSlideBtn = (handler) => {
 
 
 const slideBtn = (event) => {
-  if (event.target.className === 'main__slider__nav__dots__item') {
+  if (event.target.className === 'nav__dots__item') {
     console.log("Yeah~!");
   }
 }
