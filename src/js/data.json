@@ -1,5 +1,5 @@
 {
-  "main": [
+  "categories": [
     {
       "key": "장르", "detail": [
         {"name": "새로 올라온 작품"},
