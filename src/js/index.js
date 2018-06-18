@@ -94,30 +94,44 @@ const getCategoriesData = (data) => {
 const getMovieData = (data) => {
   const [movieList, movieSlideList] = [data.results, data.results.slice().sort(() => Math.random() - 0.5).slice(0, 3)];
 
-  movieSlideList.forEach(elem => {
-    loadData('https://api.themoviedb.org/3/movie/' + elem.id + '/videos?api_key=64391ca210dbae0d44b0a622177ef8d3', getVideoData);
-  });
-  console.log(movieList);
+  let ids = movieSlideList.map(el => {
+    return 'https://api.themoviedb.org/3/movie/' + el.id + '/videos?api_key=64391ca210dbae0d44b0a622177ef8d3'
+  })
+
+
+  ids.forEach(el => {
+    loadData(el, getVideos);
+  })
+
+
+
+
 
   renderDataTemplate(movieList);
   renderSlideTemplate(movieSlideList)
   setSlide();
 };
+let keys = [];
 
 
-const trailer = [];
-const getVideoData = (data) => {
-  const slideContents = $qsa('.content__container');
-  // slideContents.forEach(el=>{
-    
-  // })
-  trailer.push(data.results[0]);
-  if (trailer.length === 3) {
-    trailer.forEach(el => {
-      console.log("https://www.youtube.com/watch?v="+el.key);
-    })
+const getVideos = (data) => {
+  let cont = $qsa('.content__play__container');
+  keys.push(data.results[0].key);
+  let output = '';
+
+  if (keys.length === 3) {
+    for (var i = 0; i < keys.length; i++) {
+      output =`
+      <a href="https://www.youtube.com/watch?v=${keys[i]}" class="content__play">
+        <i class="content__play__icon material-icons">play_circle_outline</i>
+      </a>
+      `
+      cont[i].innerHTML = output;
+    }
   }
 }
+
+
 
 
 const sendAjaxData = () => {
@@ -129,7 +143,6 @@ const sendAjaxData = () => {
 
   const { state, api, korean } = API;
   const movieDB = state + api + korean;
-
 
   loadData('src/js/data.json', getCategoriesData);
   loadData(movieDB, getMovieData);
