@@ -269,8 +269,7 @@ a {
 
 .content__container {
   display: block;
-  opacity: 0;
-  transition: all 500ms ease-in; }
+  opacity: 0; }
 
 .content__image-container {
   position: absolute;
