@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <link rel="stylesheet" href="dist/css/app.css">
-
 </head>
 
 <body>
@@ -23,20 +22,8 @@
         <li class="left-nav__categories">
           <a href="#" class="left-nav__categories-link">카테고리</a>
           <div class="left-nav__categories-list">
-            <div class="left-nav__categories-list__filter">
-              <template id="left-nav__categories-list__template">
-                <button class="left-nav__categories-list__filter__item">
-                  <span class="left-nav__categories-list__filter__text">{{key}}</span>
-                </button>
-              </template>
-            </div>
-            <ul class="left-nav__categories-list__filtered-list">
-              <template id="left-nav__categories-list__filter-list__template">
-                <li class="left-nav__categories-list__filtered__item">
-                  <a class="filtered__item__link" href="#">{{name}}</a>
-                </li>
-              </template>
-            </ul>
+            <div class="left-nav__categories-list__filter"></div>
+            <ul class="left-nav__categories-list__filtered-list"></ul>
           </div>
         </li>
         <li class="left-nav__rating">
@@ -92,26 +79,26 @@
                 <span class="content__meh-text">&nbsp;관심없어요</span>
               </button>
             </div>
+            <div class="content__play__container">
               <a href="" class="content__play">
                 <i class="content__play__icon material-icons">play_circle_outline</i>
+              </a>
+            </div>
           </div>
         </template>
-      </div>
-
-      <button class="nav__prev">
-        <i class="nav__prev__arrow-icon material-icons">arrow_back_ios</i>
-      </button>
-      <button class="nav__next">
-        <i class="nav__next__arrow-icon material-icons">arrow_forward_ios</i>
-      </button>
-      <div class="nav__dots">
-        <button class="nav__dots__item"></button>
-        <button class="nav__dots__item"></button>
-        <button class="nav__dots__item"></button>
-      </div>
     </div>
-
-
+    <button class="nav__prev">
+      <i class="nav__prev__arrow-icon material-icons">arrow_back_ios</i>
+    </button>
+    <button class="nav__next">
+      <i class="nav__next__arrow-icon material-icons">arrow_forward_ios</i>
+    </button>
+    <div class="nav__dots">
+      <button class="nav__dots__item"></button>
+      <button class="nav__dots__item"></button>
+      <button class="nav__dots__item"></button>
+    </div>
+    </div>
     <div class="main__cinemas">
       <div class="main__cinemas__list">
         <div class="main__cinemas__list__header">
@@ -139,6 +126,8 @@
                 </div>
               </template>
             </div>
+            <button class="cinema__list__prev-btn"></button>
+            <button class="cinema__list__next-btn"></button>
           </div>
         </div>
       </div>
@@ -211,7 +200,7 @@
       </a>
     </div>
   </section>
-  <script type=module src="dist/app.js"></script>
+  <script type=module src="src/js/app.js"></script>
 </body>
 
 </html>
