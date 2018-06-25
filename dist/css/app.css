@@ -582,12 +582,15 @@ a {
     margin-bottom: 8vw; } }
 
 .main__cinemas__list__body__slider {
+  overflow-x: hidden;
+  overflow-x: -moz-scrollbars-none;
   padding: 0 50px;
   position: relative; }
 
 .main__cinemas__list__body__slider__contents {
   white-space: nowrap;
-  overflow-x: visible; }
+  overflow-x: visible;
+  transition: all 500ms ease-in; }
 
 .main__cinemas__list__body__slider__contents__item {
   display: inline-block;
@@ -667,6 +670,36 @@ a {
   @media screen and (max-width: 424px) {
     .main__cinemas__list__body__slider__contents__item {
       width: 100%; } }
+
+.cinema__list__prev-btn {
+  left: 0;
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 100%;
+  background-color: #f00;
+  opacity: 0.8;
+  outline: none;
+  border: none;
+  line-height: 74%;
+  transform: translate(0, -50%);
+  z-index: 5; }
+
+.cinema__list__next-btn {
+  right: 0;
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 100%;
+  background-color: #f00;
+  opacity: 0.8;
+  outline: none;
+  border: none;
+  line-height: 74%;
+  transform: translate(0, -50%);
+  z-index: 5; }
 
 .contents__item__content {
   position: relative;
