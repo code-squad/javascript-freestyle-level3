@@ -4,6 +4,9 @@
   background: #191919
 
 
+
+
+
 .main__slider__content
   position: absolute
   top: 0
@@ -12,20 +15,31 @@
   right: 0
 
 
-.main__slider__content__image-container
+  
+
+.content__container
+  display: block
+  opacity: 0
+  // transition: all 500ms ease-in
+
+
+
+
+.content__image-container
   position: absolute
   width: 78%
   top: 0
   right: 0
 
 
-.main__slider__content__image-container__image
+.content__image-container__image
   width: 100%
   border: 0
   z-index: 1
+  display: inline
 
 
-.main__slider__content__image-container__shadow-top
+.content__image-container__shadow-top
   background-image: linear-gradient(to bottom, #191919, #191919 10%, rgba(9,9,9,0))
   width: 100%
   height: 25%
@@ -35,7 +49,7 @@
   z-index: 2
   
 
-.main__slider__content__image-container__shadow-left
+.content__image-container__shadow-left
   background-image: linear-gradient(to right, #191919, rgba(9,9,9,0))
   width: 40%
   height: 100%
@@ -46,7 +60,7 @@
 
 
 
-.main__slider__content__image-container__shadow-bottom
+.content__image-container__shadow-bottom
   background-image: linear-gradient(to top, #191919, rgba(9,9,9,0.5) 25%, rgba(25,25,25,0))
   position: absolute
   left: 0
@@ -58,7 +72,7 @@
 
 
 
-.main__slider__content__info
+.content__info
   position: absolute
   bottom: 4.375vw
   left: 50px
@@ -67,7 +81,7 @@
 
 
 
-.main__slider__content__info__title
+.content__info__title
   position: relative
   left: 0vw
   width: 60vw
@@ -108,7 +122,7 @@
 
 
 
-.main__slider__content__synopsis
+.content__synopsis
   line-height: 1.55
   font-size: 1.1vw
   color: #ffffff
@@ -116,9 +130,15 @@
   margin-bottom: 2.2vw
   white-space: pre-line
   font-weight: 300
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: 5
+  -webkit-box-orient: vertical  
+  height: 200p
 
 
-.main__slider__content__wish
+
+.content__wish
   margin-right: 1.875vw
   padding: 0.625vw 0
   text-align: center
@@ -131,20 +151,20 @@
   cursor: pointer
 
 
-.main__slider__content__wish-icon
+.content__wish-icon
   vertical-align: middle
   font-size: 2vw
   fill: #fff
 
 
-.main__slider__content__wish-text
+.content__wish-text
   text-align: center
   vertical-align: middle
   font-size: 1.35vw
   font-weight: 300
 
 
-.main__slider__content__meh
+.content__meh
   margin-right: 1.875vw
   padding: 0.625vw 0
   text-align: center
@@ -157,13 +177,13 @@
   cursor: pointer
 
 
-.main__slider__content__meh-icon
+.content__meh-icon
   vertical-align: middle
   font-size: 2vw
   fill: #fff
 
   
-.main__slider__content__meh-text
+.content__meh-text
   text-align: center
   vertical-align: middle
   font-size: 1.35vw
@@ -171,22 +191,22 @@
 
 
 
-.main__slider__content__play
+.content__play
   display: block
   width: 7.8vw
   height: 7.8vw
   position: absolute
   right: 28.5vw
   top: 18.25vw
-  z-index: 2.5
+  z-index: 3
 
 
-.main__slider__content__play__icon
+.content__play__icon
   font-size: 7.8vw
   color: #fff
 
 
-.main__slider__nav__prev
+.nav__prev
   left: 13px
   position: absolute
   top: 50%
@@ -196,9 +216,10 @@
   outline: none
   background: 0
   cursor: pointer
-  
+  z-index: 2
 
-.main__slider__nav__prev__arrow-icon
+
+.nav__prev__arrow-icon
   color: #fff
   opacity: 0.7
   font-size: 2rem
@@ -206,7 +227,7 @@
     opacity: 0.9
 
 
-.main__slider__nav__next
+.nav__next
   right: 13px
   position: absolute
   top: 50%
@@ -216,9 +237,10 @@
   outline: none
   background: 0
   cursor: pointer
+  z-index: 2
 
 
-.main__slider__nav__next__arrow-icon
+.nav__next__arrow-icon
   color: #fff
   opacity: 0.7
   font-size: 2rem
@@ -226,14 +248,14 @@
     opacity: 0.9
 
 
-.main__slider__nav__dots
+.nav__dots
   position: absolute
   bottom: 1.5625vw
   right: 50px
   z-index: 3
 
 
-.main__slider__nav__dots__item
+.nav__dots__item
   display: inline-block
   width: 1vw
   height: 1vw
@@ -243,3 +265,6 @@
   border: 2px solid rgba(255, 255, 255, 0.4)
   cursor: pointer
   background: none
+
+
+

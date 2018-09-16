@@ -39,6 +39,9 @@
 
 
 .main__cinemas__list__body__slider
+  overflow-x: hidden
+  overflow-x: -moz-scrollbars-none
+
   padding: 0 50px
   position: relative
 
@@ -46,6 +49,8 @@
 .main__cinemas__list__body__slider__contents
   white-space: nowrap
   overflow-x: visible
+  transition: all 500ms ease-in
+
 
 
 .main__cinemas__list__body__slider__contents__item
@@ -54,6 +59,36 @@
   @for $i from 0 to $screen-size-count 
     +screen-width(#{$i})
 
+
+.cinema__list__prev-btn
+  left: 0
+  display: none
+  position: absolute
+  top: 50%
+  width: 50px
+  height: 100%
+  background-color: #f00
+  opacity: 0.8
+  outline: none
+  border: none
+  line-height: 74%
+  transform: translate(0, -50%)
+  z-index: 5
+
+.cinema__list__next-btn
+  right: 0
+  display: none
+  position: absolute
+  top: 50%
+  width: 50px
+  height: 100%
+  background-color: #f00
+  opacity: 0.8
+  outline: none
+  border: none
+  line-height: 74%
+  transform: translate(0, -50%)
+  z-index: 5
 
 
 
@@ -68,9 +103,7 @@
   background-size: cover
   background-repeat: no-repeat
   background-position: center center
-  background-color: #22a
-  border: 0.1vw solid #191
-  padding: 28.125% 0
+  border: 0.1vw solid #181818
 
 
 .contents__item__content__overlay

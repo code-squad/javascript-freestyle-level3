@@ -1,3 +1,9 @@
+.meta__content
+.meta__content__year
+.meta__content__film-rate
+.meta__content__running-time
+
+
 ---------------------------------------------------------------
 ***************************************************************
 *************************** HEADER ****************************
@@ -7,21 +13,22 @@
 .header__gnb
 .header__gnb__logo
 ---------------------------------------------------------------
-.header__gnb__left-nav
-.header__gnb__left-nav__home
-.header__gnb__left-nav__home-link
-.header__gnb__left-nav__categories
-.header__gnb__left-nav__categories-link
-.header__gnb__left-nav__rating
-.header__gnb__left-nav__rating-link
+.[header__gnb__] left-nav
+.[header__gnb__] left-nav__home
+.[header__gnb__] left-nav__home-link
+.[header__gnb__] left-nav__categories
+.[header__gnb__] left-nav__categories-link
+.[header__gnb__] left-nav__rating
+.[header__gnb__] left-nav__rating-link
 ---------------------------------------------------------------
-.header__gnb__right-nav
-.header__gnb__right-nav__name
-.header__gnb__right-nav__wishes
-.header__gnb__right-nav__search
-.header__gnb__right-nav__search-btn
-.header__gnb__right-nav__search-btn__glyphicon
-.header__gnb__right-nav__search-btn__text
+.[header__gnb__] right-nav
+.[header__gnb__] right-nav__name
+.[header__gnb__] right-nav__wishes
+.[header__gnb__] right-nav__search
+.[header__gnb__] right-nav__search-btn
+.[header__gnb__] right-nav__search-btn__glyphicon
+.[header__gnb__] right-nav__search-btn__text
+
 ---------------------------------------------------------------
 ***************************************************************
 **************************** MAIN *****************************
@@ -29,39 +36,34 @@
 ---------------------------------------------------------------
 .main__slider
 
-.main__slider__content
-.main__slider__content__image-container
-.main__slider__content__image-container-image
-.main__slider__content__image-container-shadow-top
-.main__slider__content__image-container-shadow-left
 ---------------------------------------------------------------
-.main__slider__content__image-container-shadow-bottom
+.[main__slider__] content
+.[main__slider__] content__image-container
+.[main__slider__] content__image-container-image
+.[main__slider__] content__image-container-shadow-top
+.[main__slider__] content__image-container-shadow-left
 ---------------------------------------------------------------
-.main__slider__content__info
-.main__slider__content__info__title
+.[main__slider__] content__image-container-shadow-bottom
 ---------------------------------------------------------------
-.meta__content
-.meta__content__year
-.meta__content__film-rate
-.meta__content__running-time
+.[main__slider__] content__info
+.[main__slider__] content__info__title
 ---------------------------------------------------------------
-.main__slider__content__synopsis
-
+.[main__slider__] content__synopsis
 ---------------------------------------------------------------
-.main__slider__content__wish
-.main__slider__content__wish-icon
-.main__slider__content__wish-text
+.[main__slider__] content__wish
+.[main__slider__] content__wish-icon
+.[main__slider__] content__wish-text
 ---------------------------------------------------------------
-.main__slider__content__meh
-.main__slider__content__meh-icon
-.main__slider__content__meh-text
+.[main__slider__] content__meh
+.[main__slider__] content__meh-icon
+.[main__slider__] content__meh-text
 ---------------------------------------------------------------
-.main__slider__nav__prev-arrow
-.main__slider__nav__next-arrow
-.main__slider__nav__dots
-.main__slider__nav__dots__item
-.main__slider__nav__dots__item
-.main__slider__nav__dots__item
+.[main__slider__] nav__prev-arrow
+.[main__slider__] nav__next-arrow
+.[main__slider__] nav__dots
+.[main__slider__] nav__dots__item
+.[main__slider__] nav__dots__item
+.[main__slider__] nav__dots__item
 ---------------------------------------------------------------
 .main__movie-lists
 .main__loader
@@ -93,6 +95,12 @@
 .main__cinemas__list__body__slider__contents__item
 .main__cinemas__list__body__slider__contents__item
 .main__cinemas__list__body__slider__contents__item
+
+---------------------------------------------------------------
+***************************************************************
+*************************** FOOTER ****************************
+***************************************************************
+---------------------------------------------------------------
 
 
 .footer
