@@ -25,6 +25,6 @@ export default class {
     this.db = await fetch(obj).then(response => response.json()).then(json => this.db = json);
     this.categoriesView
       .render('categories', this.db.categories)
-      .render('items', this.db.categories, 0);
+      .render('items', this.db.categories, 0)
   }
 }
