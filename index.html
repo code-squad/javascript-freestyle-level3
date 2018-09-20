@@ -51,54 +51,21 @@
 
   <section class="main">
     <div class="main__slider">
-      <div class="main__slider__content">
-        <template id="content__template">
-          <div class="content__container">
-            <div class="content__image-container">
-              <img src="https://image.tmdb.org/t/p/w1280{{backdrop_path}}" alt="" class="content__image-container__image">
-              <div class="content__image-container__shadow-top"></div>
-              <div class="content__image-container__shadow-left"></div>
-              <div class="content__image-container__shadow-bottom"></div>
-            </div>
-            <div class="content__info">
-              <h2 class="content__info__title">{{title}}</h2>
-              <div class="meta__content">
-                <span class="meta__content__year">{{release_date}}</span>
-                <span class="meta__content__film-rate">15세</span>
-                <span class="meta__content__running-time">123분</span>
-              </div>
-              <p class="content__synopsis">
-                <span>{{overview}}</span>
-              </p>
-              <button class="content__wish">
-                <i class="content__wish-icon material-icons">favorite_border</i>
-                <span class="content__wish-text">&nbsp;보고싶어요</span>
-              </button>
-              <button class="content__meh">
-                <i class="content__meh-icon material-icons">remove_circle_outline</i>
-                <span class="content__meh-text">&nbsp;관심없어요</span>
-              </button>
-            </div>
-            <div class="content__play__container">
-              <a href="" class="content__play">
-                <i class="content__play__icon material-icons">play_circle_outline</i>
-              </a>
-            </div>
-          </div>
-        </template>
+      <div class="main__slider__content"></div>
+      <button class="nav__prev">
+        <i class="nav__prev__arrow-icon material-icons">arrow_back_ios</i>
+      </button>
+      <button class="nav__next">
+        <i class="nav__next__arrow-icon material-icons">arrow_forward_ios</i>
+      </button>
+      <div class="nav__dots">
+        <button class="nav__dots__item"></button>
+        <button class="nav__dots__item"></button>
+        <button class="nav__dots__item"></button>
+      </div>
     </div>
-    <button class="nav__prev">
-      <i class="nav__prev__arrow-icon material-icons">arrow_back_ios</i>
-    </button>
-    <button class="nav__next">
-      <i class="nav__next__arrow-icon material-icons">arrow_forward_ios</i>
-    </button>
-    <div class="nav__dots">
-      <button class="nav__dots__item"></button>
-      <button class="nav__dots__item"></button>
-      <button class="nav__dots__item"></button>
-    </div>
-    </div>
+
+    
     <div class="main__cinemas">
       <div class="main__cinemas__list">
         <div class="main__cinemas__list__header">
@@ -113,19 +80,7 @@
 
         <div class="main__cinemas__list__body">
           <div class="main__cinemas__list__body__slider">
-            <div class="main__cinemas__list__body__slider__contents">
-              <template id="main__cinemas__list__body__slider__contents__template">
-                <div class="main__cinemas__list__body__slider__contents__item">
-                  <div class="contents__item__content">
-                    <img class="contents__item__content__still-cut" src="https://image.tmdb.org/t/p/w500{{backdrop_path}}"></img>
-                    <div class="contents__item__content__overlay"></div>
-                    <div class="contents__item__content__title">
-                      <span class="contents__item__content__title__text">{{title}}</span>
-                    </div>
-                  </div>
-                </div>
-              </template>
-            </div>
+            <div class="main__cinemas__list__body__slider__contents"></div>
             <button class="cinema__list__prev-btn"></button>
             <button class="cinema__list__next-btn"></button>
           </div>
@@ -200,7 +155,7 @@
       </a>
     </div>
   </section>
-  <script type=module src="src/js/app.js"></script>
+  <script type="module" src="src/js/app.js"></script>
 </body>
 
 </html>
