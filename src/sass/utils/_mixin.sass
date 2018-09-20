@@ -1,0 +1,28 @@
+=screen-mb($size)
+  @each $device, $screen, $margin-bottom in (desktop-large-size, $desktop-large-size, $desktop-large-margin-bottom), (desktop-medium-size, $desktop-medium-size, $desktop-medium-margin-bottom), (desktop-small-size, $desktop-small-size, $desktop-small-margin-bottom), (tablet-size, $tablet-size, $tablet-margin-bottom), (mobile-size, $mobile-size, $mobile-margin-bottom)
+    @if "$size == #{$device}"
+      @media screen and #{$screen}
+        margin-bottom: $margin-bottom
+
+
+=screen-width($size)
+  @each $device, $screen, $width in (desktop-large-size, $desktop-large-size, $desktop-large-width), (desktop-medium-size, $desktop-medium-size, $desktop-medium-width), (desktop-small-size,$desktop-small-size, $desktop-small-width), (tablet-size, $tablet-size, $tablet-width), (mobile-size, $mobile-size, $mobile-width)
+    @if "$size == #{$device}"
+      @media screen and #{$screen}
+        width: $width
+
+
+=screen-fz-pd($size)
+  @each $device, $screen, $font-size, $padding  in (desktop-large-size, $desktop-large-size, $desktop-large-font-size, $desktop-large-padding), (desktop-medium-size, $desktop-medium-size, $desktop-medium-font-size, $desktop-medium-padding), (desktop-small-size, $desktop-small-size, $desktop-small-font-size, $desktop-small-padding), (tablet-size, $tablet-size, $tablet-font-size, $tablet-padding), (mobile-size, $mobile-size, $mobile-font-size, $mobile-padding)
+    @if "$size == #{$device}"
+      @media screen and #{$screen}
+        font-size: $font-size
+        padding: $padding
+
+
+=screen-fz-pd($size)
+  @each $device, $screen, $font-size, $padding  in (desktop-large-size, $desktop-large-size, $desktop-large-font-size, $desktop-large-padding), (desktop-medium-size, $desktop-medium-size, $desktop-medium-font-size, $desktop-medium-padding), (desktop-small-size, $desktop-small-size, $desktop-small-font-size, $desktop-small-padding), (tablet-size, $tablet-size, $tablet-font-size, $tablet-padding), (mobile-size, $mobile-size, $mobile-font-size, $mobile-padding)
+    @if "$size == #{$device}"
+      @media screen and #{$screen}
+        font-size: $font-size
+        padding: $padding
